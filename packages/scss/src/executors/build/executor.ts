@@ -1,3 +1,4 @@
+import { ensureDir } from 'fs-extra';
 import { writeFile } from 'fs/promises';
 import { basename, join } from 'path';
 import { compile } from 'sass';
@@ -14,6 +15,7 @@ export default async function buildExecutor(options: BuildExecutorSchema) {
   const sourceMapFile = outputFile + '.map';
   debugger;
 
+  await ensureDir(options.outputPath);
   await writeFile(outputFile, result.css);
 
   if (options.sourceMap && result.sourceMap) {
