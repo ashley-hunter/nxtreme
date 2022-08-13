@@ -8,7 +8,9 @@ import {
   joinPathFragments,
   names,
   offsetFromRoot,
+  readJsonFile,
   Tree,
+  writeJsonFile,
 } from '@nrwl/devkit';
 import { LibraryGeneratorSchema } from './schema';
 
@@ -106,7 +108,28 @@ export default async function (
     }
   );
 
+  addScssMapping(tree, normalizedOptions);
+
   await formatFiles(tree);
 
   return installTask;
+}
+
+function addScssMapping(tree: Tree, options: NormalizedSchema): void {
+  let config: ScssConfig = {};
+
+  if (tree.exists('/.scssrc')) {
+    config = readJsonFile<ScssConfig>('/.scssrc');
+  }
+
+  config.paths = {
+    ...config.paths,
+    [options.importPath]: joinPathFragments(options.projectRoot, 'src'),
+  };
+
+  writeJsonFile('/.scssrc', config);
+}
+
+interface ScssConfig {
+  paths?: Record<string, string>;
 }

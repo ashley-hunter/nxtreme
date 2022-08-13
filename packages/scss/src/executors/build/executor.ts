@@ -13,7 +13,6 @@ export default async function buildExecutor(options: BuildExecutorSchema) {
 
   const outputFile = join(options.outputPath, basename(options.entryFile));
   const sourceMapFile = outputFile + '.map';
-  debugger;
 
   await ensureDir(options.outputPath);
   await writeFile(outputFile, result.css);
