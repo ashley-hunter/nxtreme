@@ -47,6 +47,7 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
     ...options,
     ...names(options.name),
     offsetFromRoot: offsetFromRoot(options.projectRoot),
+    importPath: options.importPath ?? '',
     template: '',
   };
   generateFiles(
