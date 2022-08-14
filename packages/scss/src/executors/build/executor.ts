@@ -11,14 +11,26 @@ export default async function buildExecutor(options: BuildExecutorSchema) {
     sourceMap: options.sourceMap,
   });
 
-  const outputFile = join(options.outputPath, basename(options.entryFile));
+  const outputFile = join(
+    options.outputPath,
+    basename(options.entryFile, '.scss') + '.css'
+  );
   const sourceMapFile = outputFile + '.map';
 
   await ensureDir(options.outputPath);
-  await writeFile(outputFile, result.css);
+  await writeFile(
+    outputFile,
+    result.css +
+      (options.sourceMap
+        ? `/*# sourceMappingURL=${basename(
+            options.entryFile,
+            '.scss'
+          )}.css.map */`
+        : '')
+  );
 
   if (options.sourceMap && result.sourceMap) {
-    await writeFile(sourceMapFile, result.sourceMap.sources[0]);
+    await writeFile(sourceMapFile, JSON.stringify(result.sourceMap));
   }
 
   return {
