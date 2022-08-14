@@ -4,6 +4,23 @@
   "title": "Build executor",
   "description": "",
   "type": "object",
-  "properties": {},
-  "required": []
+  "properties": {
+    "entryFile": {
+      "type": "string",
+      "description": "The path to the entry file."
+    },
+    "outputPath": {
+      "type": "string",
+      "description": "The output destination."
+    },
+    "sourceMap": {
+      "type": "boolean",
+      "description": "Specifies if we should generate source maps."
+    },
+    "optimization": {
+      "type": "boolean",
+      "description": "Whether to optimize the CSS output."
+    }
+  },
+  "required": ["entryFile", "outputPath"]
 }

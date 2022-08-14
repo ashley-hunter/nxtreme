@@ -79,7 +79,15 @@ export default async function (
           ),
           outputPath: joinPathFragments('dist', normalizedOptions.projectRoot),
           sourceMap: true,
+          optimization: false,
         },
+        configurations: {
+          production: {
+            sourceMap: false,
+            optimization: true,
+          },
+        },
+        defaultConfiguration: 'production',
       },
     },
     tags: normalizedOptions.parsedTags,

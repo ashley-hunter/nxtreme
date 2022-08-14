@@ -6,8 +6,7 @@ import { BuildExecutorSchema } from './schema';
 
 export default async function buildExecutor(options: BuildExecutorSchema) {
   const result = compile(options.entryFile, {
-    importers: [],
-    style: 'expanded',
+    style: options.optimization ? 'compressed' : 'expanded',
     sourceMap: options.sourceMap,
   });
 
