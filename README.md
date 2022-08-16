@@ -18,11 +18,11 @@ Create a SCSS library.
 
 ##### Arguments
 
-- `name`: "The name of the SCSS library",
-- `tags`: "Add tags to the project (used for linting)",
-- `directory`: "A directory where the project is placed",
-- `importPath`: "The library name used to import it, like `@myorg/my-awesome-lib`."
-- `publishable`: "Create a publishable library."
+- `name`: The name of the SCSS library.
+- `tags`: Add tags to the project (used for linting).
+- `directory`: A directory where the project is placed.
+- `importPath`: The library name used to import it, like `@myorg/my-awesome-lib`.
+- `publishable`: Create a publishable library.
 
 ### Executors
 
