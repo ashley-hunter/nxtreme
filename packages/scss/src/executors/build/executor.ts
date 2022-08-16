@@ -1,10 +1,12 @@
-import { ensureDir } from 'fs-extra';
+import { ensureDir, removeSync } from 'fs-extra';
 import { writeFile } from 'fs/promises';
 import { basename, join } from 'path';
 import { compile } from 'sass';
 import { BuildExecutorSchema } from './schema';
 
 export default async function buildExecutor(options: BuildExecutorSchema) {
+  removeSync(options.outputPath);
+
   await compileStylesheet(options.entryFile, options.outputPath, {
     sourceMap: options.sourceMap,
   });
@@ -33,7 +35,7 @@ async function compileStylesheet(
 
   const filename = basename(entryFile, '.scss');
 
-  const outputFile = join(outputPath, filename + options.minify ? '.min.css' : '.css');
+  const outputFile = join(outputPath, filename + (options.minify ? '.min.css' : '.css'));
   const sourceMapFile = outputFile + '.map';
 
   await ensureDir(outputPath);
