@@ -1,94 +1,36 @@
-
-
 # Nxtreme
 
-This project was generated using [Nx](https://nx.dev).
+A collection of Nx Plugins to supercharge your Nx developer experience.
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+## SCSS
 
-🔎 **Smart, Fast and Extensible Build System**
+Install the package by running the following command:
 
-## Adding capabilities to your workspace
+```bash
+npm install @nxtreme/scss --save-dev
+```
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+### Generators
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+#### Library Generator
 
-Below are our core plugins:
+Create a SCSS library.
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+##### Arguments
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+- `name`: "The name of the SCSS library",
+- `tags`: "Add tags to the project (used for linting)",
+- `directory`: "A directory where the project is placed",
+- `importPath`: "The library name used to import it, like `@myorg/my-awesome-lib`."
+- `publishable`: "Create a publishable library."
 
-## Generate an application
+### Executors
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+#### Build Generator
 
-> You can use any of the plugins above to generate applications as well.
+##### Options
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@nxtreme/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+- `entryFile`: The path to the entry file.
+- `outputPath`: The output destination.
+- `sourceMap`: Specifies if we should generate source maps.
+- `optimization`: Whether to optimize the CSS output.
