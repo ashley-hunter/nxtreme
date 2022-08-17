@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "mitosis": "packages/mitosis",
+    "mitosis-e2e": "packages/mitosis-e2e",
     "scss": "packages/scss",
     "scss-e2e": "packages/scss-e2e"
   }

@@ -1,0 +1,12 @@
+{
+  "extends": "<%= rootTsConfigPath %>",
+  "compilerOptions": {
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

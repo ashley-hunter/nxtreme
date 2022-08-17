@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nxtreme/mitosis": ["packages/mitosis/src/index.ts"],
       "@nxtreme/scss": ["packages/scss/src/index.ts"]
     }
   },

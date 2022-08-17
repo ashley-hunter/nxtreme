@@ -1,0 +1,60 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/mitosis/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/mitosis",
+        "main": "packages/mitosis/src/index.ts",
+        "tsConfig": "packages/mitosis/tsconfig.lib.json",
+        "assets": [
+          "packages/mitosis/*.md",
+          {
+            "input": "./packages/mitosis/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/mitosis/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/mitosis",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/mitosis",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/mitosis/**/*.ts",
+          "packages/mitosis/generators.json",
+          "packages/mitosis/executors.json",
+          "packages/mitosis/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/mitosis"],
+      "options": {
+        "jestConfig": "packages/mitosis/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
