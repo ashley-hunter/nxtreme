@@ -50,6 +50,10 @@ function normalizeOptions(tree: Tree, options: LibraryGeneratorSchema): Normaliz
     projectDirectory,
     parsedTags,
     rootTsConfigPath: getRelativePathToRootTsConfig(tree, projectRoot),
+    frameworks: options.frameworks
+      ?.split(',')
+      .map(s => `"${s.trim()}"`)
+      .join(', '),
   };
 }
 

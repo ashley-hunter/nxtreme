@@ -13,7 +13,7 @@ import { ComponentGeneratorSchema } from './schema';
 function addFiles(tree: Tree, options: ComponentGeneratorSchema) {
   const { sourceRoot } = readProjectConfiguration(tree, options.project);
 
-  const componentDir = joinPathFragments(sourceRoot, getDirectory(options));
+  const componentDir = joinPathFragments(sourceRoot, getDirectory(options) ?? '');
 
   const templateOptions = {
     ...options,
