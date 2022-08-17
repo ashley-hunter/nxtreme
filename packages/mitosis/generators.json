@@ -2,11 +2,28 @@
   "$schema": "http://json-schema.org/schema",
   "name": "mitosis",
   "version": "0.0.1",
+  "schematics": {
+    "library": {
+      "factory": "./src/generators/library/generator#librarySchematic",
+      "schema": "./src/generators/library/schema.json",
+      "description": "Generate a new Mitosis library"
+    },
+    "component": {
+      "factory": "./src/generators/component/generator#componentSchematic",
+      "schema": "./src/generators/component/schema.json",
+      "description": "Generate a new Mitosis component"
+    }
+  },
   "generators": {
     "library": {
       "factory": "./src/generators/library/generator",
       "schema": "./src/generators/library/schema.json",
       "description": "Generate a new Mitosis library"
+    },
+    "component": {
+      "factory": "./src/generators/component/generator",
+      "schema": "./src/generators/component/schema.json",
+      "description": "Generate a new Mitosis component"
     }
   }
 }

@@ -1,5 +1,5 @@
 module.exports = {
   files: 'src/**',
-  targets: [],
+  targets: [<%= frameworks %>],
   options: {},
 };

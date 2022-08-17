@@ -1,6 +1,13 @@
 {
   "extends": "<%= rootTsConfigPath %>",
   "compilerOptions": {
+    "strict": <%= strict %>,
+    "target": "es5",
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsxImportSource": "@builder.io/mitosis"
   },
   "files": [],
   "include": [],

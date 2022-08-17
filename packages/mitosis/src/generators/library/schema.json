@@ -25,6 +25,11 @@
       "description": "A directory where the project is placed",
       "alias": "d"
     },
+    "frameworks": {
+      "type": "string",
+      "description": "Comma separated list of frameworks to support.",
+      "default": "angular, react, vue3"
+    },
     "linter": {
       "description": "The tool to use for running lint checks.",
       "type": "string",
@@ -73,6 +78,11 @@
     "standaloneConfig": {
       "description": "Split the project configuration into `<projectRoot>/project.json` rather than including it inside `workspace.json`.",
       "type": "boolean"
+    },
+    "skipTsConfig": {
+      "type": "boolean",
+      "default": false,
+      "description": "Do not update `tsconfig.json` for development experience."
     }
   },
   "required": ["name"]

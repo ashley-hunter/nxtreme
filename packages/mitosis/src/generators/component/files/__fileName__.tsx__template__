@@ -1,0 +1,6 @@
+/* eslint-disable-next-line */
+export interface <%= className %>Props {}
+
+export default function <%= className %>(props: <%= className %>Props) {
+  return <h1>Welcome to <%= className %>!</h1>
+}
