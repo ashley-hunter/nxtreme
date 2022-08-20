@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "Setup",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "precommit": {
+      "type": "boolean",
+      "description": "Setup a pre-commit hook",
+      "default": true
+    },
+    "prepush": {
+      "type": "boolean",
+      "description": "Setup a pre-push hook",
+      "default": true
+    }
+  },
+  "required": []
+}

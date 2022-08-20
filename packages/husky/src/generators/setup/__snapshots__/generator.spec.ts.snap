@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setup generator should add the pre-commit script 1`] = `
+"#!/bin/sh
+    . \\"$(dirname \\"$0\\")/_/husky.sh\\"
+
+    nx=./node_modules/@nrwl/cli/bin/nx.js
+
+    if [ -f \\"$nx\\" ]; then
+      node $nx format:write
+    fi"
+`;
+
+exports[`setup generator should add the pre-push script 1`] = `
+"#!/bin/sh
+    . \\"$(dirname \\"$0\\")/_/husky.sh\\"
+
+    nx=./node_modules/@nrwl/cli/bin/nx.js
+
+    if [ -f \\"$nx\\" ]; then
+      node \\"$nx\\" format:check
+    fi"
+`;

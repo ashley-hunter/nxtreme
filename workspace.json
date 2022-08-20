@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "husky": "packages/husky",
+    "husky-e2e": "packages/husky-e2e",
     "scss": "packages/scss",
     "scss-e2e": "packages/scss-e2e"
   }
